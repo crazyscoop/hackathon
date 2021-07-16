@@ -3,6 +3,14 @@ name: api-trigger
 on:
   workflow_dispatch:
     inputs:
+      emailTo:
+        description: 'email to address'
+        required: true
+        default: 'himanshuspykid96@gmail.com'
+      from:
+        description: 'email from'
+        required: false
+        default: 'Nuclei'
       name:
         description: 'Person to greet'
         required: true
@@ -33,9 +41,9 @@ jobs:
         # Required mail subject:
         subject: Github Actions job result
         # Required recipients' addresses:
-        to: himanshu.singh@gmail.com, himanshuspykid96@gmail.com
+        to: ${{ github.event.inputs.emailTo }}
         # Required sender full name (address can be skipped):
-        from: Luke Skywalker # <user@example.com>
+        from: ${{ github.event.inputs.from }} # <user@example.com>
         # Optional whether this connection use TLS (default is true if server_port is 465)
         secure: true
         # Optional plain body:
@@ -47,7 +55,7 @@ jobs:
         # Optional blind carbon copy recipients:
         #bcc: r2d2@example.com,hansolo@example.com
         # Optional recipient of the email response:
-        reply_to: himanshuspykid96@gmail.com
+        reply_to: ${{ github.event.inputs.from }}
         # Optional unsigned/invalid certificates allowance:
         ignore_cert: true
         # Optional converting Markdown to HTML (set content_type to text/html too):
