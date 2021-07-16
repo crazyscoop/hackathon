@@ -1,6 +1,17 @@
 name: api-trigger
 
 on:
+  repository_dispatch:
+    types: do-something
+    inputs:
+      name:
+        description: 'Person to greet'
+        required: true
+        default: 'Himanshu'
+      home:
+        description: 'location'
+        required: false
+        default: 'Nuclei'
   workflow_dispatch:
     inputs:
       name:
