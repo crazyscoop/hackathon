@@ -47,9 +47,9 @@ jobs:
         # Optional whether this connection use TLS (default is true if server_port is 465)
         secure: true
         # Optional plain body:
-        body: blah blah
+        body: file://README.md
         #html_body: <?xml version="1.0"?><!DOCTYPE html><html><body><p>Download Nuclei Sample App From <a href="https://www.w3schools.com">here</a></p></body></html>
-        html_body: email_template.html
+        #html_body: file://email_template.html
 
         # Optional HTML body read from file:
         #html_body: file://README.html
@@ -63,7 +63,7 @@ jobs:
         ignore_cert: true
         # Optional converting Markdown to HTML (set content_type to text/html too):
         convert_markdown: true
-        content_type: text/html
+        #content_type: text/html
         # Optional attachments:
         #attachments: attachments.zip,git.diff,./dist/static/*.js
         # Optional priority: 'high', 'normal' (default) or 'low'
