@@ -1,0 +1,24 @@
+name: API Triggered workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Person to greet'
+        required: true
+        default: 'Himanshu'
+      home:
+        description: 'location'
+        required: false
+        default: 'Nuclei'
+
+jobs:
+  say_hello:
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+        echo "Hello $!"
+        echo "- in $!"     
+    - run: |
+        echo Did this work
+    
