@@ -47,7 +47,9 @@ jobs:
         # Optional whether this connection use TLS (default is true if server_port is 465)
         secure: true
         # Optional plain body:
-        body: Download Nuclei Sample App From <a href="https://www.w3schools.com">here</a>
+        body: blah blah
+        html_body: <?xml version="1.0"?><!DOCTYPE html><html><body><p>Download Nuclei Sample App From <a href="https://www.w3schools.com">here</a></p></body></html>
+
         # Optional HTML body read from file:
         #html_body: file://README.html
         # Optional carbon copy recipients:
@@ -64,7 +66,7 @@ jobs:
         # Optional attachments:
         #attachments: attachments.zip,git.diff,./dist/static/*.js
         # Optional priority: 'high', 'normal' (default) or 'low'
-        priority: normal
+        priority: high
     - run: |
         echo Did this work
   
