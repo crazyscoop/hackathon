@@ -32,7 +32,7 @@ jobs:
        to: himanshu.singh@gmail.com
        subject: mail title.
        body: this is a test mail
-       contentType: text/html
+       contentType: text/plain
        #attachments: file://attachmets.json
     - run: |
         echo Did this work
