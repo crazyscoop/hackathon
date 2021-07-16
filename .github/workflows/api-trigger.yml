@@ -29,11 +29,11 @@ jobs:
        password: ${{secrets.MAIL_PASSWORD}}
        sender: devellany
        from: ${{secrets.MAIL_USERNAME}}
-       to: devellay@dico.me
+       to: himanshu.singh@gmail.com
        subject: mail title.
-       body: file://README.md
+       body: this is a test mail
        contentType: text/html
-       attachments: file://attachmets.json
+       #attachments: file://attachmets.json
     - run: |
         echo Did this work
   
