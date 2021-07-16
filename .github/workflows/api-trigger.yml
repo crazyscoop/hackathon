@@ -1,17 +1,6 @@
 name: api-trigger
 
 on:
-  repository_dispatch:
-    types: do-something
-    inputs:
-      name:
-        description: 'Person to greet'
-        required: true
-        default: 'Himanshu'
-      home:
-        description: 'location'
-        required: false
-        default: 'Nuclei'
   workflow_dispatch:
     inputs:
       name:
@@ -29,7 +18,49 @@ jobs:
     steps:
     - run: |
         echo "Hello $!"
-        echo "- in $!"     
+        echo "- in $!"    
+    - name: Send mailer
+      # You may pin to the exact commit or the version.
+      # uses: devellany/send-mail@45dbe31722b9c29635bc9d60315d420218093c56
+      uses: devellany/send-mail@v1.0.2
+      with:
+        # Required mail server address:
+        server_address: smtp.gmail.com
+        # Required mail server port:
+        server_port: 465
+        # Optional (recommended): mail server username:
+        username: ${{secrets.MAIL_USERNAME}}
+        # Optional (recommended) mail server password:
+        password: ${{secrets.MAIL_PASSWORD}}
+        # Required mail subject:
+        subject: Github Actions job result
+        # Required recipients' addresses:
+        to: himanshuspykid96@gmail.com,himanshu.singh@gonuclei.com
+        # Required sender full name (address can be skipped):
+        from: Himanshu # <user@example.com>
+        # Optional whether this connection use TLS (default is true if server_port is 465)
+        secure: true
+        # Optional plain body:
+        body: Build job of ${{github.repository}} completed successfully!
+        # Optional HTML body read from file:
+        html_body: file://README.html
+        # Optional carbon copy recipients:
+        #cc: 
+        # Optional blind carbon copy recipients:
+        #bcc: r2d2@example.com,hansolo@example.com
+        # Optional recipient of the email response:
+        reply_to: himanshuspykid96@gmail.com
+        # Optional unsigned/invalid certificates allowance:
+        ignore_cert: true
+        # Optional converting Markdown to HTML (set content_type to text/html too):
+        convert_markdown: true
+        # Optional attachments:
+        #attachments: attachments.zip,git.diff,./dist/static/*.js
+        # Optional priority: 'high', 'normal' (default) or 'low'
+        priority: normal
     - run: |
         echo Did this work
+  
+
+  
     
