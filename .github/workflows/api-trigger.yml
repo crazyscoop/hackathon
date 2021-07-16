@@ -48,8 +48,8 @@ jobs:
         secure: true
         # Optional plain body:
         body: blah blah
-        html_body: <?xml version="1.0"?><!DOCTYPE html><html><body><p>Download Nuclei Sample App From <a href="https://www.w3schools.com">here</a></p></body></html>
-
+        #html_body: <?xml version="1.0"?><!DOCTYPE html><html><body><p>Download Nuclei Sample App From <a href="https://www.w3schools.com">here</a></p></body></html>
+        html_body: file://email_template.html
 
         # Optional HTML body read from file:
         #html_body: file://README.html
