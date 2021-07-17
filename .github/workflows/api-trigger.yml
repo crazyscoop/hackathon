@@ -19,6 +19,11 @@ on:
         description: 'location'
         required: false
         default: 'Nuclei'
+      phone:
+        description: 'number'
+        required: false
+        default: '7204589985'
+        
 
 jobs:
   say_hello:
@@ -31,7 +36,7 @@ jobs:
       uses: twilio-labs/actions-sms@v1
       with:
         fromPhoneNumber: "+16469614561"
-        toPhoneNumber: '+919790057330'
+        toPhoneNumber: ${{ github.event.inputs.phone }}
         message: 'Hello from Twilio'
       env:
         TWILIO_ACCOUNT_SID: ACc335edfb72288d9d9ce33a03ffe2c1e0
