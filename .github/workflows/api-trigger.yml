@@ -34,9 +34,9 @@ jobs:
         toPhoneNumber: '9790057330'
         message: 'Hello from Twilio'
       env:
-        TWILIO_ACCOUNT_SID: AC647fc4ca92929d7a7d2a250e4b9de3cf
-        TWILIO_API_KEY: 0f4ff1b6eb59433396e2cf4b54db89ec
-        TWILIO_API_SECRET: gKewYASs0YyJhkj7izcC6g43KiJRTKbY
+        TWILIO_ACCOUNT_SID: SK52011707e521eafbfb383946c16a5513
+        TWILIO_API_KEY: a78bafd9ce63d69182569e5d1151da64
+        TWILIO_API_SECRET: pvrCWetekU9kJIxM3bLRdcUWXdNbugc8
     - name: Send mail
       uses: dawidd6/action-send-mail@v3
       with:
