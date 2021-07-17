@@ -34,7 +34,7 @@ jobs:
         toPhoneNumber: '9790057330'
         message: 'Hello from Twilio'
       env:
-        TWILIO_ACCOUNT_SID: SK52011707e521eafbfb383946c16a5513
+        TWILIO_ACCOUNT_SID: ACc335edfb72288d9d9ce33a03ffe2c1e0
         TWILIO_API_KEY: a78bafd9ce63d69182569e5d1151da64
         TWILIO_API_SECRET: pvrCWetekU9kJIxM3bLRdcUWXdNbugc8
     - name: Send mail
