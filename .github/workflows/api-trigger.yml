@@ -30,8 +30,8 @@ jobs:
     - name: 'Sending SMS Notification'
       uses: twilio-labs/actions-sms@v1
       with:
-        fromPhoneNumber: "7204589985"
-        toPhoneNumber: '9790057330'
+        fromPhoneNumber: "+16469614561"
+        toPhoneNumber: '+919790057330'
         message: 'Hello from Twilio'
       env:
         TWILIO_ACCOUNT_SID: ACc335edfb72288d9d9ce33a03ffe2c1e0
